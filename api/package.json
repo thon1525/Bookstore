@@ -18,7 +18,11 @@
     "express": "^4.19.2",
     "mongoose": "^8.4.4",
     "nodemon": "^3.1.4",
+    "oracledb": "^6.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/oracledb": "^6.5.1"
   }
 }

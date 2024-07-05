@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import routeProduct from "./routes/v1/route";
+import routeAuth from "./routes/v1/auth";
 export const app = express();
 
 app.get("/", (req: Request, Res: Response) => {
@@ -7,3 +8,5 @@ app.get("/", (req: Request, Res: Response) => {
 });
 
 app.use("/product", routeProduct);
+
+app.use("/", routeAuth);

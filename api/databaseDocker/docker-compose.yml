@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  oracle-db:
+    image: gvenzl/oracle-xe:21-slim
+    environment:
+      - ORACLE_PASSWORD=thon123
+      - ORACLE_SID=XE
+      - ORACLE_PDB=BookStore
+    ports:
+      - "1536:1521"  # Make sure the host port is different from 1521 if needed
+      - "5501:5500"  # Change the host port from 5500 to 5501
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+    restart: always
+
+volumes:
+  oracle-data:
