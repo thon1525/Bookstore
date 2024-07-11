@@ -30,7 +30,8 @@
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="https://learnwithkru.com/_next/image?url=%2FLogos%2FKruLogo.png&w=640&q=75" alt="Logo" width="115" height="110">
   </a>
-  <h1 align="center">Learnwithkru</h1>
+  <h1 align="center">Bookstore
+</h1>
 </div>
 
 <!-- TABLE OF CONTENTS -->
