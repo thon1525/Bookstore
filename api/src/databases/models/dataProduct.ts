@@ -2,9 +2,9 @@
 import oracledb, { Connection, Result } from "oracledb";
 
 interface IUser {
-  id?: number;
   username: string;
   email: string;
+  password: string;
 }
 
 class User {

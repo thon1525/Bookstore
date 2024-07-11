@@ -1,0 +1,280 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"AuthType": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"username": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"role": {
+						"type": "string",
+						"enum": [
+							"AUTHOR",
+							"USER"
+						]
+					}
+				},
+				"required": [
+					"username",
+					"email"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AuthorType": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"username": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"role": {
+						"type": "string",
+						"enum": [
+							"AUTHOR",
+							"USER"
+						]
+					},
+					"firstname": {
+						"type": "string"
+					},
+					"lastname": {
+						"type": "string"
+					},
+					"date_birth": {
+						"type": "string"
+					},
+					"nationality": {
+						"type": "string"
+					},
+					"bio": {
+						"type": "string"
+					},
+					"picture": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"username",
+					"email",
+					"password",
+					"firstname",
+					"lastname",
+					"date_birth",
+					"nationality",
+					"bio",
+					"picture"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AuthBookType": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"title": {
+						"type": "string"
+					},
+					"publication_date": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"description": {
+						"type": "string"
+					},
+					"cover_image": {
+						"type": "string"
+					},
+					"price": {
+						"type": "number",
+						"format": "double"
+					},
+					"category_name": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"title",
+					"publication_date",
+					"description",
+					"cover_image",
+					"price"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "cofix-project",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"paths": {
+		"/api/v1/auth/user-all": {
+			"get": {
+				"operationId": "GetAllUser",
+				"responses": {
+					"200": {
+						"description": "Success",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Auth"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/api/v1/auth/signup": {
+			"post": {
+				"operationId": "CreateAuth",
+				"responses": {
+					"201": {
+						"description": "Created",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Auth"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AuthType"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/v1/auth/become-author": {
+			"post": {
+				"operationId": "CreateAuthor",
+				"responses": {
+					"201": {
+						"description": "Created",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Auth"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AuthorType"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/v1/auth/upload-book": {
+			"post": {
+				"operationId": "UploadBook",
+				"responses": {
+					"201": {
+						"description": "Created",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Auth"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AuthBookType"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/v1/auth/view-book": {
+			"get": {
+				"operationId": "ViewBook",
+				"responses": {
+					"200": {
+						"description": "Created",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Auth"
+				],
+				"security": [],
+				"parameters": []
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
